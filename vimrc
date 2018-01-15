@@ -17,7 +17,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'ludovicchabant/vim-gutentags'
+"Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'flazz/vim-colorschemes'
@@ -194,6 +194,12 @@ nmap <silent> <Leader>tt :TagbarToggle<CR>
 " Remove all trailing whitespaces at save
 autocmd BufWritePre * :%s/\s\+$//e
 
+
+map <Leader> <C-W>
+
+map <Leader>, <C-W><
+map <Leader>. <C-W>>
+
 " RSpec.vim mappings
 " map <Leader>t :call RunCurrentSpecFile()<CR>
 " map <Leader>s :call RunNearestSpec()<CR>
@@ -205,7 +211,7 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
 " Correct vim colors in tmux
-" set term=screen-256color
+set term=screen-256color
 
 " Ignore some directories
 "set wildignore+=**/node_modules,**/bower_components,**/tmp,**/vendor,**/git
@@ -221,3 +227,5 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 "let g:pymode_doc = 0
 "let g:pymode_folding = 0
 "let g:pymode_rope = 0
+
+let g:NERDTreeDirArrows=0
