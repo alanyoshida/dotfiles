@@ -2,6 +2,7 @@
 ## ADD TO THE END OF ~/.bashrc
 
 # Change Colors
+# https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
 # https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
 
 # Show git branch on bash, using git branch command line to get the branch
