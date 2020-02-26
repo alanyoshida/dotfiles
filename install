@@ -1,0 +1,94 @@
+#!/bin/bash
+
+h1(){
+  echo -e "\n\e[32m${F_VDOBLE}\e[1m# $1\e[39m\n"
+}
+
+h1 "Update"
+sudo apt-get update
+
+h1 "Install Docker"
+# DOCKER
+sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo docker run hello-world
+
+# Snaps
+h1 "install Vscode"
+sudo snap install --classic code
+
+h1 "install postman"
+sudo snap install postman
+
+h1 "install kubectl"
+sudo snap install --classic kubectl
+
+h1 "install gitkraken"
+sudo snap install gitkraken
+
+h1 "install intellij"
+sudo snap install --classic intellij-idea-ultimate
+
+h1 "install go"
+sudo snap install --classic go
+
+h1 "install dbeaver"
+sudo snap install dbeaver-ce
+
+h1 "install terraform"
+sudo snap install terraform
+
+h1 "install spotify"
+sudo snap install spotify
+
+h1 "install build-essential git"
+sudo apt install -y git build-essential manpages-dev
+
+h1 "Install Rust"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+h1 "Install NVM (node version manager)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install v12
+
+h1 "Install chromium"
+sudo apt install -y chromium-browser
+
+h1 "powerline"
+sudo apt install powerline
+
+h1 "install tmux"
+sudo apt install -y tmux
+
+h1 "install tmux plugin manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+h1 "install fish"
+sudo apt install -y fish fish-common
+
+#powerline-config tmux setup
+#powerline-config fish setup
+h1 "install xdotool (libinput gestures)"
+sudo apt install -y xdotool libinput-tools
+git clone https://github.com/bulletmark/libinput-gestures.git
+./libinput-gestures/libinput-gestures-setup install
+./libinput-gestures/libinput-gestures-setup autostart
+./libinput-gestures/libinput-gestures-setup start
+
+# config file ~/.config/libinput-gestures.conf
+
+h1 "install miscelaneous"
+sudo apt install -y fish git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg

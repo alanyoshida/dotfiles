@@ -1,0 +1,147 @@
+{
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.automationShell.linux": "/usr/bin/fish",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.integrated.automationShell.osx": "/usr/local/bin/fish",
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [
+    80,
+    100
+  ],
+  "window.zoomLevel": 0,
+  "terminal.integrated.rendererType": "dom",
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "editor.suggestSelection": "first",
+  "window.titleBarStyle": "custom",
+  "bookmarks.saveBookmarksInProject": true,
+  "types-autoinstaller.saveAsDevDependency": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "gitlens.hovers.currentLine.over": "line",
+  "workbench.editor.enablePreview": false,
+  "bookmarks.useWorkaroundForFormatters": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.startupEditor": "newUntitledFile",
+  "breadcrumbs.enabled": true,
+  "bookmarks.backgroundLineColor": "rgba(21, 126, 251, 0.1)",
+  "go.useLanguageServer": true,
+  "go.alternateTools": {
+    "go": "~/.go/bin/go"
+  },
+  "terminal.integrated.fontFamily": "Fira Code",
+  "git.autofetch": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "explorer.confirmDelete": true,
+  "git-graph.maxDepthOfRepoSearch": 2,
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "400",
+  "editor.fontSize": 16,
+  "workbench.list.automaticKeyboardNavigation": false,
+  "workbench.activityBar.visible": true,
+  "editor.cursorSurroundingLines": 5,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "projectManager.any.maxDepthRecursion": 1,
+  "projectManager.removeCurrentProjectFromList": true,
+  "projectManager.git.baseFolders": [
+    "$home/workspace/",
+    "$home/dev/",
+    "$home/../shared/dev/"
+  ],
+  "projectManager.vscode.baseFolders": [
+    "$home/workspace/",
+    "$home/dev/",
+    "$home/../shared/dev/"
+  ],
+  "projectManager.git.ignoredFolders": [
+    "node_modules",
+    "vendor"
+  ],
+  "projectManager.vscode.ignoredFolders": [
+    "node_modules",
+    "vendor"
+  ],
+  "todo-tree.filtering.excludeGlobs": [
+    "**/vendor/**/*.*",
+    "**/node_modules/**/*.*",
+  ],
+  "cSpell.userWords": [
+    "nohoist",
+    "wwmoraes"
+  ],
+  "cSpell.ignorePaths": [
+    "/usr/**",
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".vscode"
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "files.associations": {
+    "**/i3/config": "i3",
+    "Dockerfile_*": "dockerfile",
+    ".env*": "dotenv",
+    ".terraformignore": "gitignore"
+  },
+  "git-graph.dialog.merge.noFastForward": false,
+  "git-graph.dialog.merge.squashCommits": true,
+  "git-graph.fetchAndPrune": true,
+  "licenser.author": "William Wagner Moraes Artero",
+  "licenser.disableAutoHeaderInsertion": true,
+  "projectManager.groupList": true,
+  "rust-client.rustupPath": "~/.cargo/bin/rustup",
+  "atlascode.jira.jqlList": [
+    {
+      "enabled": true,
+      "id": "f7458dd1-ae1a-4d4d-b170-1ddeb0d286c9",
+      "monitor": true,
+      "name": "MB: All my issues",
+      "query": "assignee = currentUser() ORDER BY lastViewed DESC",
+      "siteId": "56956b05-11d9-4d8a-ac41-ab69e8d9de21"
+    },
+    {
+      "enabled": true,
+      "id": "17d1e6ed-053b-4cfa-9e5a-1fd4cf5986a3",
+      "monitor": true,
+      "name": "My unresolved issues",
+      "query": "assignee = currentUser() AND resolution not in (Declined, Duplicate, Done) order by updated DESC",
+      "siteId": "56956b05-11d9-4d8a-ac41-ab69e8d9de21"
+    },
+    {
+      "enabled": true,
+      "id": "acbf2492-cf43-4b88-b898-adb8dcc5273c",
+      "monitor": true,
+      "name": "My open issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved order by updated DESC",
+      "siteId": "56956b05-11d9-4d8a-ac41-ab69e8d9de21"
+    }
+  ],
+  "atlascode.jira.statusbar.showUser": false,
+  "atlascode.jira.statusbar.showLogin": false,
+  "atlascode.jira.statusbar.showProduct": false,
+  "atlascode.bitbucket.enabled": false,
+  "atlascode.jira.statusbar.enabled": false,
+  "yaml.schemas": {
+    "file:///Users/william/.vscode/extensions/atlassian.atlascode-2.4.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ],
+  "window.nativeTabs": true,
+  "editor.acceptSuggestionOnEnter": "smart"
+}
