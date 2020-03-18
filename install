@@ -27,6 +27,34 @@ h1 "install docker-compose"
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-"(uname -s)"-"(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+h1 "install microk8s"
+sudo snap install microk8s --classic
+sudo microk8s.enable dns
+sudo microk8s.enable registry
+
+h1 "Configuring microk8s"
+sudo microk8s.kubectl config view --flatten > ~/.kube/microk8s-config
+set KUBECONFIG "~/.kube/microk8s-config:~/.kube/config"
+kubectl config view --flatten > ~/.kube/temp-config
+mv ~/.kube/temp-config ~/.kube/config
+kubectl config use-context microk8s
+
+h1 "install tilt.dev"
+curl -fsSL https://raw.githubusercontent.com/windmilleng/tilt/master/scripts/install.sh | bash
+
+# test tilt
+tilt version
+
+# Kubectx - Change k8s context
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+# Fish completions
+mkdir -p ~/.config/fish/completions
+ln -s /opt/kubectx/completion/kubectx.fish ~/.config/fish/completions/
+ln -s /opt/kubectx/completion/kubens.fish ~/.config/fish/completions/
+
 # Snaps
 h1 "install Vscode"
 sudo snap install --classic code
@@ -86,13 +114,23 @@ sudo apt install -y fish fish-common
 #powerline-config tmux setup
 #powerline-config fish setup
 h1 "install xdotool (libinput gestures)"
+sudo gpasswd -a $USER input
 sudo apt install -y xdotool libinput-tools
 git clone https://github.com/bulletmark/libinput-gestures.git
-./libinput-gestures/libinput-gestures-setup install
-./libinput-gestures/libinput-gestures-setup autostart
-./libinput-gestures/libinput-gestures-setup start
+cd libinput-gestures
+sudo ./libinput-gestures-setup install
+cp old/libinput-gestures.conf ~/.conf/
+./libinput-gestures-setup autostart
+./libinput-gestures-setup start
+cd --
 
 # config file ~/.config/libinput-gestures.conf
 
+h1 "install charles proxy"
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 1AD28806
+sudo sh -c 'echo deb https://www.charlesproxy.com/packages/apt/ charles-proxy main > /etc/apt/sources.list.d/charles.list'
+sudo apt-get update
+sudo apt-get install charles-proxy
+
 h1 "install miscelaneous"
-sudo apt install -y fish git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg
+sudo apt install -y fish git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
