@@ -33,8 +33,8 @@ make install
 - Alt + k = Move window to right
 
 ### VIM + NERDTree
-- Ctrl + O = Open nerdtree
-- Shift + I = Show hidden files with .file
+- Ctrl + o = Open nerdtree
+- Shift + i = Show hidden files with .file
 - Shift + ? = Help on Nerdtree
 - [Space] = Vim Prefix
 - `prefix` + Left = Go to left vim window
@@ -43,11 +43,12 @@ make install
 - `prefix` + v = Split window vertical
 - u = Undo last change
 - `Ctrl + r` = Redo last change
-- Shift + D = Delete the rest of the line
-- Shift + V = Volume in line mode
-- Ctrl + V = Volume in column mode
-- Y + W = Copy word under cursor
-- D + W = Cut word under cursor
+- Shift + d = Delete the rest of the line
+- Shift + v = Volume in line mode
+- Ctrl + v = Volume in column mode
+- Ctrl + v, select lines, SHIFT + $ + A, Esc, Esc = Append to the end of the line
+- y + w = Copy word under cursor
+  - d + w = Cut word under cursor
 - /<search> = Search, use `n` for next, `Shift + n` for previous
 - :%s/<regex_search>/<regex_replace>/ = Replace using regex
 - :%s/<regex_search>/<regex_replace>/c = Replace asking confirmation
