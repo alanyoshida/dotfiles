@@ -1,0 +1,28 @@
+{
+  "segments": {
+    "right": [
+      {
+        "function": "powerline.segments.common.vcs.stash",
+        "priority": 50
+      },
+      {
+        "function": "powerline.segments.common.vcs.branch",
+        "priority": 40
+      },
+      {
+        "function": "powerline.segments.common.bat.battery",
+        "args": {
+          "online": "⚡️"
+        }
+      },
+      {
+        "function": "powerline.segments.common.net.hostname",
+        "args": {
+          "only_if_ssh": true,
+          "exclude_domain": true
+        }
+      }
+    ]
+  },
+  "segment_data": {}
+}
