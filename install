@@ -33,7 +33,7 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
 
 h1 "install docker-compose"
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-"(uname -s)"-"(uname -m) -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-"$(uname -s)"-"$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 h1 "install microk8s"
@@ -64,33 +64,76 @@ mkdir -p ~/.config/fish/completions
 ln -s /opt/kubectx/completion/kubectx.fish ~/.config/fish/completions/
 ln -s /opt/kubectx/completion/kubens.fish ~/.config/fish/completions/
 
+h1 "Install flatpak"
+sudo add-apt-repository ppa:flatpak/stable
+sudo apt update
+sudo apt install -y flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 # Snaps
-h1 "install Vscode"
-sudo snap install --classic code
+h1 "install vscode"
+# sudo snap install --classic code
+sudo flatpak install -y flathub com.visualstudio.code
 
 h1 "install postman"
-sudo snap install postman
+# sudo snap install postman
+sudo flatpak install -y flathub com.getpostman.Postman
 
 h1 "install kubectl"
 sudo snap install --classic kubectl
 
-h1 "install gitkraken"
-sudo snap install gitkraken
+h1 "install kubectl krew"
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+  KREW="krew-${OS}_${ARCH}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+  tar zxvf "${KREW}.tar.gz" &&
+  ./"${KREW}" install krew
+)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+' >> ~/.bashrc
+kubectl krew install neat
+kubectl krew install sniff
+kubectl krew install spy
+kubectl krew install tail
+kubectl krew install view-webhook
 
-h1 "install intellij"
-sudo snap install --classic intellij-idea-ultimate
+h1 "install lazygit"
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install -y lazygit
+
+h1 "install k9s"
+curl -L https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz -o k9s.tar.gz
+sudo tar -C /usr/local/bin -xzf k9s.tar.gz
+
+#h1 "install gitkraken"
+#sudo snap install gitkraken
+
+#h1 "install intellij"
+#sudo snap install --classic intellij-idea-ultimate
 
 h1 "install go"
-sudo snap install --classic go
+#sudo snap install --classic go
+curl -L https://go.dev/dl/go1.18.linux-amd64.tar.gz -o golang.tar.gz
+sudo tar -C /usr/local -xzf golang.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+sudo echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+go version
 
 h1 "install dbeaver"
-sudo snap install dbeaver-ce
+# sudo snap install dbeaver-ce
+sudo flatpak install -y flathub io.dbeaver.DBeaverCommunity
 
 h1 "install terraform"
-sudo snap install terraform
+sudo snap install --candidate terraform
 
 h1 "install spotify"
-sudo snap install spotify
+# sudo snap install spotify
+sudo flatpak install -y flathub com.spotify.Client
 
 h1 "install build-essential git"
 sudo apt install -y git build-essential manpages-dev
@@ -105,17 +148,23 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm install v12
 
-h1 "Install chromium"
-sudo apt install -y chromium-browser
+# h1 "Install chromium"
+# sudo apt install -y chromium-browser
 
 h1 "powerline"
-sudo apt install powerline
+sudo apt install -y powerline
 
 h1 "install tmux"
 sudo apt install -y tmux
 
 h1 "install tmux plugin manager"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+h1 "install kitty"
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 
 h1 "install fish"
 sudo apt install -y fish fish-common
@@ -144,13 +193,14 @@ sudo apt-get install charles-proxy
 h1 "install miscelaneous"
 sudo apt install -y fish git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
 
-h1 "Install OBS studio"
-sudo apt-get install ffmpeg
-sudo add-apt-repository ppa:obsproject/obs-studio
-sudo apt install obs-studio
+h1 "install vundle vim"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
-h1 "Install flatpak"
-sudo apt install flatpak
+h1 "Install OBS studio"
+sudo apt install -y ffmpeg
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt install -y obs-studio
 
 bold "Install Nvidia? (y/n): "
 read nvidia
