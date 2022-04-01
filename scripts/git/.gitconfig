@@ -1,5 +1,5 @@
 [core]
-  editor = vim
+	editor = vim
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	precomposeUnicode = true
@@ -69,8 +69,8 @@
 
 # Default user
 [user]
-	name = William Wagner Moraes Artero
-	email = williamwmoraes@gmail.com
+	name = Alan Yoshida
+	email = alanyoshida@msn.com
 
 # Work overrides
 [includeIf "gitdir:/Users/william/workspace/**/"]
