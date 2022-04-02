@@ -11,6 +11,7 @@ end
 if type -q kubectl
   # base kubectl
   abbr -a k "kubectl"
+  abbr -a kx "kubectx"
   abbr -a kga "kubectl get all"
   abbr -a kgra "kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found"
   abbr -a krt "kubectl run toolbox -i --tty --rm --restart=Never --image=wwmoraes/toolbox"
