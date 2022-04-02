@@ -16,6 +16,8 @@ bold(){
 h1 "Update"
 sudo apt-get update
 
+h1 "install ncdu (disk usage)"
+sudo apt install ncdu
 h1 "Install Docker"
 # DOCKER
 sudo apt-get install -y \
