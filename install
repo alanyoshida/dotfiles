@@ -149,6 +149,10 @@ export PATH=$PATH:/usr/local/go/bin
 sudo echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 go version
 
+h1 "install kind"
+go install sigs.k8s.io/kind@v0.12.0
+kind --help
+
 h1 "install dbeaver"
 # sudo snap install dbeaver-ce
 sudo flatpak install -y flathub io.dbeaver.DBeaverCommunity
