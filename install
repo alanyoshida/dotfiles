@@ -173,6 +173,9 @@ sudo chmod +x /usr/local/bin/yh
 h1 "Install Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+h1 "install exa (ls alternative)"
+cargo install exa
+
 h1 "install golang"
 #sudo snap install --classic go
 curl -L https://go.dev/dl/go1.18.linux-amd64.tar.gz -o golang.tar.gz
