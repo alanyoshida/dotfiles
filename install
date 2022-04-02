@@ -22,6 +22,9 @@ sudo apt install -y git build-essential manpages-dev
 h1 "install miscelaneous"
 sudo apt install -y git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
 
+h1 "install ripgrep (grep alternative)"
+sudo apt install -y ripgrep
+
 h1 "install ncdu (disk usage)"
 sudo apt install ncdu
 
