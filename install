@@ -105,10 +105,17 @@ h1 "install stern (multiple pod logs)"
 curl -L https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64 -o stern
 sudo chmod +x stern
 sudo mv stern /usr/local/bin
+
 h1 "install helm"
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 sudo chmod 700 get_helm.sh
 sudo ./get_helm.sh
+
+h1 "install terragrunt"
+curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.6/terragrunt_linux_amd64 -o terragrunt
+sudo chmod +x terragrunt
+sudo mv terragrunt /usr/local/bin
+
 h1 "install lazygit"
 sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
