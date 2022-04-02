@@ -128,6 +128,9 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 sudo chmod 700 get_helm.sh
 sudo ./get_helm.sh
 
+h1 "install helm-docs"
+go install github.com/norwoodj/helm-docs/cmd/helm-docs@latest
+
 h1 "install terraform"
 sudo snap install --candidate terraform
 
