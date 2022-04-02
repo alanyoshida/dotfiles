@@ -16,6 +16,12 @@ bold(){
 h1 "Update"
 sudo apt-get update
 
+h1 "install build-essential git"
+sudo apt install -y git build-essential manpages-dev
+
+h1 "install miscelaneous"
+sudo apt install -y git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
+
 h1 "install ncdu (disk usage)"
 sudo apt install ncdu
 
@@ -49,7 +55,7 @@ sudo snap install microk8s --classic
 sudo microk8s.enable dns
 sudo microk8s.enable registry
 
-h1 "Configuring microk8s"
+h1 "configuring microk8s"
 sudo microk8s.kubectl config view --flatten > ~/.kube/microk8s-config
 set KUBECONFIG "~/.kube/microk8s-config:~/.kube/config"
 kubectl config view --flatten > ~/.kube/temp-config
@@ -72,7 +78,7 @@ mkdir -p ~/.config/fish/completions
 ln -s /opt/kubectx/completion/kubectx.fish ~/.config/fish/completions/
 ln -s /opt/kubectx/completion/kubens.fish ~/.config/fish/completions/
 
-h1 "Install flatpak"
+h1 "install flatpak"
 sudo add-apt-repository ppa:flatpak/stable
 sudo apt update
 sudo apt install -y flatpak
@@ -119,6 +125,9 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 sudo chmod 700 get_helm.sh
 sudo ./get_helm.sh
 
+h1 "install terraform"
+sudo snap install --candidate terraform
+
 h1 "install terragrunt"
 curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.6/terragrunt_linux_amd64 -o terragrunt
 sudo chmod +x terragrunt
@@ -149,7 +158,10 @@ sudo chmod +x /usr/local/bin/yh
 #h1 "install intellij"
 #sudo snap install --classic intellij-idea-ultimate
 
-h1 "install go"
+h1 "Install Rust"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+h1 "install golang"
 #sudo snap install --classic go
 curl -L https://go.dev/dl/go1.18.linux-amd64.tar.gz -o golang.tar.gz
 sudo tar -C /usr/local -xzf golang.tar.gz
@@ -169,18 +181,9 @@ h1 "install dbeaver"
 # sudo snap install dbeaver-ce
 sudo flatpak install -y flathub io.dbeaver.DBeaverCommunity
 
-h1 "install terraform"
-sudo snap install --candidate terraform
-
 h1 "install spotify"
 # sudo snap install spotify
 sudo flatpak install -y flathub com.spotify.Client
-
-h1 "install build-essential git"
-sudo apt install -y git build-essential manpages-dev
-
-h1 "Install Rust"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 h1 "Install NVM (node version manager)"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
@@ -205,13 +208,13 @@ sudo apt install -y tmux
 h1 "install tmux plugin manager"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-h1 "install kitty"
+h1 "install kitty (terminal emulator)"
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sudo ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
 sudo cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
 sudo sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 
-h1 "install fish"
+h1 "install fish (Friendly Interative SHell)"
 sudo apt install -y fish fish-common
 cat <<EOF >> ~/.config/fish/config.fish
 set GOPATH $HOME/go
@@ -238,19 +241,16 @@ sudo sh -c 'echo deb https://www.charlesproxy.com/packages/apt/ charles-proxy ma
 sudo apt-get update
 sudo apt-get install charles-proxy
 
-h1 "install miscelaneous"
-sudo apt install -y git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
-
-h1 "install vundle vim"
+h1 "install vim vundle (plugin manager)"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-h1 "Install OBS studio"
+h1 "install OBS studio"
 sudo apt install -y ffmpeg
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt install -y obs-studio
 
-bold "Install Nvidia? (y/n): "
+bold "install Nvidia Driver? (y/n): "
 read nvidia
 if [ "$nvidia" != "${nvidia#[Yy]}" ] ;then
   echo "Installing Nvidia drivers ..."
@@ -262,7 +262,7 @@ if [ "$nvidia" != "${nvidia#[Yy]}" ] ;then
   echo "Nvidia drivers Installed"
 fi
 
-bold "Ubuntu 19.10+ ? (y/n)"
+bold "install vulkan ? Ubuntu 19.10+ ? (y/n)"
 read ubuntu19
 if [ "$ubuntu19" != "${ubuntu19#[Yy]}" ] ;then
   echo "Installing Vulkan"
@@ -273,7 +273,7 @@ if [ "$ubuntu19" != "${ubuntu19#[Yy]}" ] ;then
   echo "Vulkan end"
 fi
 
-bold "Ubuntu 18.04 ? (y/n)"
+bold "install vulkan ? Ubuntu 18.04 ? (y/n)"
 read ubuntu18
 if [ "$ubuntu18" != "${ubuntu18#[Yy]}" ] ;then
   echo "Installing Vulkan using ppa:kisak/kisak-mesa"
