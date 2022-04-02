@@ -4,6 +4,7 @@ status --is-interactive; or exit
 # git abbreviations
 if type -q git
   abbr -a gco "git checkout"
+  abbr -a lz "lazygit"
 end
 
 # kubectl abbreviations
