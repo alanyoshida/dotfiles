@@ -18,6 +18,12 @@ sudo apt-get update
 
 h1 "install ncdu (disk usage)"
 sudo apt install ncdu
+
+h1 "install bashtop (cpu usage)"
+sudo add-apt-repository ppa:bashtop-monitor/bashtop
+sudo apt update
+sudo apt install -y bashtop
+
 h1 "Install Docker"
 # DOCKER
 sudo apt-get install -y \
