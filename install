@@ -214,6 +214,7 @@ h1 "powerline"
 sudo apt install -y powerline
 pip install powerline-status
 pip install powerline-kubernetes
+pip install powerk8s
 #powerline-config tmux setup
 #powerline-config fish setup
 
