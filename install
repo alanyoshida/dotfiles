@@ -30,6 +30,9 @@ sudo add-apt-repository ppa:bashtop-monitor/bashtop
 sudo apt update
 sudo apt install -y bashtop
 
+h1 "ranger (file manager)"
+pip install ranger-fm
+
 h1 "Install Docker"
 # DOCKER
 sudo apt-get install -y \
