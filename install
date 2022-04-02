@@ -228,7 +228,7 @@ sudo apt-get update
 sudo apt-get install charles-proxy
 
 h1 "install miscelaneous"
-sudo apt install -y fish git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
+sudo apt install -y git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
 
 h1 "install vundle vim"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
