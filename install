@@ -182,6 +182,8 @@ nvm install v12
 
 h1 "powerline"
 sudo apt install -y powerline
+pip install powerline-status
+
 
 h1 "install tmux"
 sudo apt install -y tmux
