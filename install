@@ -200,6 +200,12 @@ sudo sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/
 h1 "install fish"
 sudo apt install -y fish fish-common
 
+cat <<EOF >> ~/.config/fish/config.fish
+set GOPATH $HOME/go
+set -gx PATH $PATH $HOME/go/bin
+set -x SHELL /bin/bash
+set -gx PATH $PATH $HOME/.krew/bin
+EOF
 #powerline-config tmux setup
 #powerline-config fish setup
 h1 "install xdotool (libinput gestures)"
