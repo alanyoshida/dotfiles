@@ -243,6 +243,9 @@ cp old/libinput-gestures.conf ~/.conf/
 cd --
 
 # config file ~/.config/libinput-gestures.conf
+h1 "install ngrok ("
+curl -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz -o ngrok-stable-linux-amd64.tgz
+sudo tar xvzf ~/Downloads/ngrok-stable-linux-amd64.tgz -C /usr/local/bin
 
 h1 "install charles proxy"
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 1AD28806
