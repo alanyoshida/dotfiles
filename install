@@ -101,6 +101,10 @@ kubectl krew install spy
 kubectl krew install tail
 kubectl krew install view-webhook
 
+h1 "install stern (multiple pod logs)"
+curl -L https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64 -o stern
+sudo chmod +x stern
+sudo mv stern /usr/local/bin
 h1 "install lazygit"
 sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
