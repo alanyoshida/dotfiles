@@ -352,5 +352,5 @@ set term=screen-256color
 "let g:pymode_rope = 0
 
 let g:NERDTreeDirArrows=0
-let g:vimwiki_list = [{'path': '~/Projects/vimwiki', 'path_html': '~/Projects/vimwiki/docs/'}]
+let g:vimwiki_list = [{'path': '~/projects/vimwiki', 'path_html': '~/Projects/vimwiki/docs/'}]
 
