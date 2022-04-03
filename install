@@ -20,7 +20,7 @@ h1 "install build-essential git"
 sudo apt install -y git build-essential manpages-dev
 
 h1 "install miscelaneous"
-sudo apt install -y git vim stow tmux pip gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
+sudo apt install -y git vim stow tmux pip net-tools imagemagick gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
 
 h1 "install ripgrep (grep alternative)"
 sudo apt install -y ripgrep
@@ -160,7 +160,7 @@ sudo chmod +x /usr/local/bin/jq
 
 h1 "install yh"
 sudo curl -L https://github.com/andreazorzetto/yh/releases/download/v0.4.0/yh-linux-amd64.zip -o ~/Downloads/yh.zip
-sudo unzip ~/Downloads/yh.zip 
+sudo unzip ~/Downloads/yh.zip
 sudo mv yh /usr/local/bin/yh
 sudo chmod +x /usr/local/bin/yh
 
