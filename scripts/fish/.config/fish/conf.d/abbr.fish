@@ -1,6 +1,9 @@
 # Abbreviations available only in interactive shells
 status --is-interactive; or exit
 
+# Misc
+abbr -a l "exa -lT"
+
 # git abbreviations
 if type -q git
   abbr -a -g gco "git checkout"
