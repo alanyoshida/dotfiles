@@ -22,6 +22,11 @@ sudo apt install -y git build-essential manpages-dev
 h1 "install miscelaneous"
 sudo apt install -y git vim stow tmux pip net-tools imagemagick gawk mawk jq moreutils:sponge  man-db:apropos gcc fzf hub htop unzip gnupg:gpg gimp
 
+h1 "install emacs"
+sudo snap install emacs --classic
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
 h1 "install ripgrep (grep alternative)"
 sudo apt install -y ripgrep
 
