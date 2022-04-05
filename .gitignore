@@ -35,6 +35,10 @@ vscode/.config/Code
 !vscode/.config/Code/User/snippets
 !vscode/.config/Code/User/keybindings.json
 !vscode/.config/Code/User/settings.json
+scripts/vscode/.config/Code
+!scripts/vscode/.config/Code/User/snippets
+!scripts/vscode/.config/Code/User/keybindings.json
+!scripts/vscode/.config/Code/User/settings.json
 
 fish/.config/fish/fish_variables
 vim/.vim/.netrwhist
