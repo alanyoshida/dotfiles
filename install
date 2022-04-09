@@ -216,6 +216,9 @@ nvm install v12
 h1 "install fisher (Fish)"
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
+h1 "install NVM for fish shell"
+fisher install jorgebucaran/nvm.fish
+
 # h1 "Install chromium"
 # sudo apt install -y chromium-browser
 
