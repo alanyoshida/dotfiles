@@ -213,6 +213,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm install v12
 
+h1 "install fisher (Fish)"
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
 # h1 "Install chromium"
 # sudo apt install -y chromium-browser
 
