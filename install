@@ -219,6 +219,8 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 h1 "install NVM for fish shell"
 fisher install jorgebucaran/nvm.fish
 
+h1 "install tldr (list of command line)"
+npm install -g tldr
 # h1 "Install chromium"
 # sudo apt install -y chromium-browser
 
