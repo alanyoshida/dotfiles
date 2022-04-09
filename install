@@ -177,6 +177,7 @@ sudo chmod +x /usr/local/bin/yh
 
 h1 "Install Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo echo 'set -gx PATH $PATH $HOME/.cargo/bin' >> ~/.config/fish/config.fish
 
 h1 "install exa (ls alternative)"
 cargo install exa
