@@ -195,6 +195,9 @@ sudo echo 'set -gx PATH $PATH $HOME/.cargo/bin' >> ~/.config/fish/config.fish
 h1 "install exa (ls alternative)"
 cargo install exa
 
+h1 "install bat"
+cargo install --locked bat
+
 h1 "install golang"
 #sudo snap install --classic go
 curl -L https://go.dev/dl/go1.18.linux-amd64.tar.gz -o golang.tar.gz
