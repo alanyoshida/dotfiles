@@ -33,6 +33,9 @@ sudo apt install -y ripgrep
 h1 "install fd (find alternative)"
 sudo apt install -y fd-find
 
+h1 "install fzf (fuzzy finder)"
+sudo apt install fzf
+
 h1 "install ncdu (disk usage)"
 sudo apt install ncdu
 
