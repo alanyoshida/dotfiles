@@ -6,6 +6,18 @@ vim/.vim/swaps/*
 vim/.vim/undo/*
 !vim/.vim/undo/.gitkeep
 
+scripts/vim/.vim/bundle/*
+scripts/vim/.vim/bundle/c.vim
+
+scripts/vim/.vim/backups/*
+!scripts/vim/.vim/backups/.gitkeep
+
+scripts/vim/.vim/swaps/*
+!scripts/vim/.vim/swaps/.gitkeep
+
+scripts/vim/.vim/undo/*
+!scripts/vim/.vim/undo/.gitkeep
+
 # Vim files
 vim/.vim/viminfo
 
@@ -36,9 +48,10 @@ vscode/.config/Code
 !vscode/.config/Code/User/keybindings.json
 !vscode/.config/Code/User/settings.json
 scripts/vscode/.config/Code
-!scripts/vscode/.config/Code/User/snippets
+!qqscripts/vscode/.config/Code/User/snippets
 !scripts/vscode/.config/Code/User/keybindings.json
 !scripts/vscode/.config/Code/User/settings.json
 
 fish/.config/fish/fish_variables
 vim/.vim/.netrwhist
+scripts/git/.local/bin/*
