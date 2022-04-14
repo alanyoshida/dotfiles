@@ -20,4 +20,4 @@ if set -q KITTY_INSTALLATION_DIR
 end
 
 # try to launch tmux
-launch-tmux
+#launch-tmux
