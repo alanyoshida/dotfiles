@@ -63,6 +63,10 @@ sudo chmod +x /usr/local/bin/yh
 h1 "install yq (like jq for yaml)"
 snap install yq
 
+h1 "install duf (disk usage)"
+sudo curl -L https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb -o ~/Downloads/duf.deb
+sudo dpkg -i ~/Downloads/duf.deb
+
 h1 "Install Docker"
 # DOCKER
 sudo apt-get install -y \
