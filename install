@@ -36,6 +36,9 @@ sudo apt install -y fd-find
 h1 "install fzf (fuzzy finder)"
 sudo apt install fzf
 
+h1 "install bat (substitute to cat)"
+sudo apt install bat
+
 h1 "install ncdu (disk usage)"
 sudo apt install ncdu
 
