@@ -222,7 +222,7 @@ h1 "install spotify"
 # sudo snap install spotify
 sudo flatpak install -y flathub com.spotify.Client
 
-h1 "Install NVM (node version manager)"
+h1 "Install NVM (node version manager for bash)"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -237,6 +237,7 @@ fisher install jorgebucaran/nvm.fish
 
 h1 "install tldr (list of command line)"
 npm install -g tldr
+
 # h1 "Install chromium"
 # sudo apt install -y chromium-browser
 
