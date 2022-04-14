@@ -11,6 +11,7 @@ set -gx PATH $PATH $HOME/.krew/bin
 set -x SHELL /bin/bash
 set -gx PATH $PATH $HOME/.emacs.d/bin
 set -gx PATH $PATH $HOME/.cargo/bin
+set -gx NVM_DIR $HOME/.nvm
 
 if set -q KITTY_INSTALLATION_DIR
     set --global KITTY_SHELL_INTEGRATION enabled
