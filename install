@@ -60,6 +60,9 @@ sudo unzip ~/Downloads/yh.zip
 sudo mv yh /usr/local/bin/yh
 sudo chmod +x /usr/local/bin/yh
 
+h1 "install yq (like jq for yaml)"
+snap install yq
+
 h1 "Install Docker"
 # DOCKER
 sudo apt-get install -y \
