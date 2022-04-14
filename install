@@ -50,6 +50,10 @@ sudo apt install -y bashtop
 h1 "install ranger (file manager)"
 pip install ranger-fm
 
+h1 "install jq"
+sudo curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o /usr/local/bin/jq
+sudo chmod +x /usr/local/bin/jq
+
 h1 "Install Docker"
 # DOCKER
 sudo apt-get install -y \
@@ -164,10 +168,6 @@ sudo apt-get install -y lazygit
 h1 "install k9s"
 curl -L https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz -o k9s.tar.gz
 sudo tar -C /usr/local/bin -xzf k9s.tar.gz
-
-h1 "install jq"
-sudo curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o /usr/local/bin/jq
-sudo chmod +x /usr/local/bin/jq
 
 h1 "install yh"
 sudo curl -L https://github.com/andreazorzetto/yh/releases/download/v0.4.0/yh-linux-amd64.zip -o ~/Downloads/yh.zip
