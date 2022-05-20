@@ -2,7 +2,8 @@
 status --is-interactive; or exit
 
 # Misc
-abbr -a l "exa -lT"
+abbr -a ll "exa -lT"
+abbr -a l "exa -l"
 
 # git abbreviations
 if type -q git
